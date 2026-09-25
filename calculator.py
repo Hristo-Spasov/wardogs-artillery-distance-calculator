@@ -17,4 +17,4 @@ def calculate(enemy_x, enemy_y, your_x, your_y, result):
 
     distance = math.sqrt(dx ** 2 + dy ** 2)
 
-    result.setText(f"Distance: {distance:.0f}")
+    result.setText(f"Distance: {distance:.0f} meters")
