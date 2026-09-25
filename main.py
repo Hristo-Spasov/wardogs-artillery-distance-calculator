@@ -2,10 +2,6 @@ import sys
 import os
 from calculator import calculate
 from PySide6.QtGui import QIcon
-def resource_path(relative):
-    if hasattr(sys, '_MEIPASS'):
-        return os.path.join(sys._MEIPASS, relative)
-    return os.path.join(os.path.abspath('.'), relative)
 from PySide6.QtWidgets import (
     QApplication,
     QWidget,
@@ -16,6 +12,11 @@ from PySide6.QtWidgets import (
     QPushButton,
 )
 
+
+def resource_path(relative):
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative)
+    return os.path.join(os.path.abspath('.'), relative)
 
 class CoordinateInput(QDoubleSpinBox):
     def focusInEvent(self, event):
@@ -66,7 +67,7 @@ enemy_y.setDecimals(3)
 enemy_position.addWidget(enemy_y)
 
 
-# Put the two positions side by side
+
 positions = QHBoxLayout()
 
 positions.addLayout(your_position)
